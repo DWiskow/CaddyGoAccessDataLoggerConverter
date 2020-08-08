@@ -28,7 +28,7 @@ Copy the caddyLog.py file to your computer and make it executable (chmode +x cad
                  to an output file named "access.json" (containing the complete Caddy log
                  data in JSON format)
                 
-                 optionally select only the -g [--outputGoAccessFilename] OR the -o
+                 optionally select only the -g [--outputGoAccessFilename] OR the -j
                  [--outputJSONfilename] to output a single file of the required
                  format
 ```
