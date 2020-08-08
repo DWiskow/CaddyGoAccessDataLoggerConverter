@@ -10,7 +10,7 @@ It is currently difficult to obtain the full benefit from GoAccess with Caddy lo
 #### caddyLog.py
 caddyLog.py solves this problem by providing a tool to convert Caddy JSON logs into a format that GoAccess can understand, and maxmises the data that is shared with GOACCESS in order to optimise the analysis.
 
-caddyLog.py can use the log file(s) written by Caddy as its input in either batch or live mode. In live mode, it can monitor a 'live' Caddy log file for events being appended to it in pseudo real-time and reflect those changes immediately in a converted format log file for processing by GoAccess.
+caddyLog.py can use the log file(s) written by Caddy as its input in either batch or live mode. In live mode, it can monitor a 'live' Caddy log file for events being appended to it in pseudo real-time and reflect those changes immediately in a converted format log file that is streamed in pseudo real-time for processing by GoAccess.
 
 caddyLog.py can alternatively instantiate a TCP/IP network socket server, configured to receive Caddy log data in real-time, and stream Caddy log data to a GoAccess format log file as events happen. This enables the 'live' monitoring capabilities of GoAccess to function seamlessly with Caddy in real-time.
 
