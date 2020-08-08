@@ -21,15 +21,39 @@ Copy the caddyLog.py file to your computer and ake it executable (chmode +x cadd
 ```
 ./caddyLog.py -n localhost:55555 -g access.goaccess.log -j access.json
 
-set up a TCP/IP network socket server on IP address localhost:55555
-and output any log data streamed to it by Caddy over the network to
-a file named "access.goaccess.log" (containing Caddy log data converted
-into a format compatible with goAccess - https://goaccess.io/) AND ALSO
-to an output file named "access.json" (containing the complete Caddy log
-data in JSON format)
+                 set up a TCP/IP network socket server on IP address localhost:55555
+                 and output any log data streamed to it by Caddy over the network to
+                 a file named "access.goaccess.log" (containing Caddy log data converted
+                 into a format compatible with goAccess - https://goaccess.io/) AND ALSO
+                 to an output file named "access.json" (containing the complete Caddy log
+                 data in JSON format)
                 
-optionally select only the -g [--outputGoAccessFilename] OR the -o
-[--outputJSONfilename] to output a single file of the required
-format
+                 optionally select only the -g [--outputGoAccessFilename] OR the -o
+                 [--outputJSONfilename] to output a single file of the required
+                 format
 ```
+
+
+```
+./caddyLog.py -i access.log -g access.goaccess.log
+
+                 read in the data from the file "access.log" (in JSON format) and write
+                 out a file named "access.goaccess.log" (containing the Caddy log data
+                 converted into a format compatible with goAccess).
+```
+
+```
+./caddyLog.py -i access.log -i 600 -g access.goaccess.log
+
+                 read in the data from the file "access.log" (in JSON format) and write
+                 out a file named "access.goaccess.log" (containing the Caddy log data
+                 converted into a format compatible with goAccess), then repeatedly
+                 sleep for 10 minutes (600 seconds) before checking to see if any
+                 additional Caddy log data has been written to "access.log". If
+                 additional data has been added to "access.log", then convert it and
+                 append it to "access.goaccess.log" before again sleeping.
+
+```
+
+
 
