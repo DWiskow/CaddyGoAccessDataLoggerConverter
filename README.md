@@ -5,7 +5,7 @@
 
 [GoAccess](https://goaccess.io/) is a tool for convenient and quick analysis of access logs, it shares a philosophy (if not its development language) with Caddy in that it is self-contained and stand-alone with no dependencies (and can even generate self-contained access log file reporting in a single HTML file, that can then be auto-deployed on your web site).
 
-It is currently difficult to obtain the full benefit from GoAccess with Caddy log files as the log files output by Caddy are not in a format that can be easily ingested by GoAccess (Note: common log formats are supported by both tools, but that significantly limits the data that can be shared).
+It is currently difficult to obtain the full benefit from GoAccess with Caddy log files as the log files output by Caddy are not in a format that can be easily ingested by GoAccess (Note: common log formats are supported by both tools, but that significantly limits the analysis and reporting).
 
 #### caddyLog.py
 caddyLog.py solves this problem by providing a tool to convert Caddy JSON logs into a format that GoAccess can understand, and maxmises the data that is shared with GOACCESS in order to optimise the analysis.
