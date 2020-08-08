@@ -1,5 +1,5 @@
 # CaddyGoAccessDataLoggerConverter
-#### Caddy/GoAccess data logger &amp; converter that translates Caddy web server JSON logs into a format that GoAccess can ingest and exploit in batch or real-time.
+#### Caddy/GoAccess data logger &amp; converter that translates Caddy web server JSON logs into a format that GoAccess can ingest and exploit in either batch or real-time.
 
 [Caddy](https://caddyserver.com) is a powerful, extensible platform to serve your sites, services, and apps, written in Go. Although most people use it as a web server or proxy. It provides a really simple, performant and flexible platform to host secure static web sites and web applications. 
 
