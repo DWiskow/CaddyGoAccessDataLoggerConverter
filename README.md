@@ -16,7 +16,7 @@ caddyLog.py can alternatively instantiate a TCP/IP network socket server, config
 
 ## Usage
 
-Copy the caddyLog.py file to your computer and ake it executable (chmode +x caddyLog.py). You can then run caddyLog .py as shown in the examples detailed below.
+Copy the caddyLog.py file to your computer and make it executable (chmode +x caddyLog.py). You can then run caddyLog .py as shown in the examples detailed below.
 
 ```
 ./caddyLog.py -n localhost:55555 -g access.goaccess.log -j access.json
