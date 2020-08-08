@@ -8,11 +8,11 @@
 It is currently difficult to obtain the full benefit from GoAccess with Caddy log files as the log files output by Caddy are not in a format that can be easily ingested by GoAccess (Note: common log formats are supported by both tools, but that significantly limits the data that can be shared).
 
 #### caddyLog.py
-caddyLog.py solves this problem by providing a tool to convert Caddy JSON logs into a format that GoAccess can understand, whilst maxmising the data that is provided to GOACCESS.
+caddyLog.py solves this problem by providing a tool to convert Caddy JSON logs into a format that GoAccess can understand, and maxmises the data that is shared with GOACCESS in order to optimise the analysis.
 
-caddyLog.py can use the log file written by Caddy as its input in either batchor live mode. In live mode, it can monitor a 'live' log file for records being appended to it in pseudo real-time and reflect those changes into a converted log file for processing by GoAccess.
+caddyLog.py can use the log file(s) written by Caddy as its input in either batch or live mode. In live mode, it can monitor a 'live' Caddy log file for events being appended to it in pseudo real-time and reflect those changes immediately in a converted format log file for processing by GoAccess.
 
-caddyLog.py can alternatively instantiate a TCP/IP network socket server, configured to receive Caddy log data in real-time, and stream Caddy log data into a GoAccess format log file as events happen. This enables the 'live' monitoring capabilities of GoAccess to function seamlessly with Caddy.
+caddyLog.py can alternatively instantiate a TCP/IP network socket server, configured to receive Caddy log data in real-time, and stream Caddy log data to a GoAccess format log file as events happen. This enables the 'live' monitoring capabilities of GoAccess to function seamlessly with Caddy in real-time.
 
 ## Usage
 
@@ -55,5 +55,4 @@ Copy the caddyLog.py file to your computer and make it executable (chmode +x cad
 
 ```
 
-
-
+Executing caddyLog.py with the argument -h or --help will provide more instructions and detail on how to use caddyLog.py
