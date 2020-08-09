@@ -43,7 +43,7 @@ Copy the caddyLog.py file to your computer and make it executable (**chmod +x ca
 ```
 
 ```
-./caddyLog.py -i access.log -i 600 -g access.goaccess.log
+./caddyLog.py -i access.log -t 600 -g access.goaccess.log
 
                  read in the data from the file "access.log" (in JSON format) and write
                  out a file named "access.goaccess.log" (containing the Caddy log data
