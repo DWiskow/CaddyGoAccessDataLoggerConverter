@@ -76,7 +76,7 @@ def longHelp():
     print('                 out a file named "access.goaccess.log" (containing the Caddy log data')
     print('                 converted into a format compatible with goAccess).')
     print()
-    print('   ./caddyLog.py -i access.log -i 600 -g access.goaccess.log')
+    print('   ./caddyLog.py -i access.log -t 600 -g access.goaccess.log')
     print()
     print('                 read in the data from the file "access.log" (in JSON format) and write')
     print('                 out a file named "access.goaccess.log" (containing the Caddy log data')
