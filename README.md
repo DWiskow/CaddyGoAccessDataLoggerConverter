@@ -60,8 +60,8 @@ Executing caddyLog.py with the argument -h or --help will provide more instructi
 Example output format
 
 ```
-2020-08-03 19:17:37 "example.com" 192.168.1.1 GET / HTTP/1.1 200 458 0.005674565 "" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36"
-2020-08-03 18:35:53 "example.com" 192.168.100.3 GET /wp-login.php HTTP/1.1 404 0 0.000298749 "http://example.com/wp-login.php" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:62.0) Gecko/20100101 Firefox/62.0"
-2020-08-03 19:04:35 "example.com" 192.168.200.56 GET /admin/ HTTP/1.1 404 0 0.000482654 "http://example.com/admin/" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:62.0) Gecko/20100101 Firefox/62.0"
+2020-08-03 19:17:37 example.com 192.168.1.1 GET / HTTP/1.1 200 458 0.005674565 unkown "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36"
+2020-08-03 18:35:53 example.com 192.168.100.3 GET /wp-login.php HTTP/1.1 404 0 0.000298749 http://example.com/wp-login.php "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:62.0) Gecko/20100101 Firefox/62.0"
+2020-08-03 19:04:35 example.com 192.168.200.56 GET /admin/ HTTP/1.1 404 0 0.000482654 http://example.com/admin/ "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:62.0) Gecko/20100101 Firefox/62.0"
 ```
 
