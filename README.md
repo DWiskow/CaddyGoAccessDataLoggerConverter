@@ -65,3 +65,46 @@ Example output format
 2020-08-03 19:04:35 example.com 192.168.200.56 GET /admin/ HTTP/1.1 404 0 0.000482654 http://example.com/admin/ "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:62.0) Gecko/20100101 Firefox/62.0"
 ```
 
+For an example of a goaccess configuration that is compatible with the output format, see the `goaccess.conf` file
+
+
+## Docker Image
+
+A docker image is also provided.
+
+Example `docker-compose`:
+
+```
+version: "3.7"
+
+services:
+  caddy:
+    image: caddy:2.1.1-alpine
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile
+      - ./site:/srv
+      - ./caddy_data:/data
+      - ./caddy_config:/config
+
+  logconverter:
+    build:
+      context: ./logconverter
+      dockerfile: dockerfile
+    volumes:
+      - ./caddy_data:/logconverter/input-logs
+      - ./site/logs:/logconverter/output-logs
+
+```
+
+In the example above, Caddy is set to output logs to the /data folder. Excerpt from Caddyfile:
+
+```
+	log {
+		output file /data/access.log
+	}
+
+```
