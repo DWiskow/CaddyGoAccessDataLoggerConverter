@@ -31,7 +31,7 @@ below
 
 *********************************************************************************** """
 
-import sys, signal, getopt, socket, json
+import sys, signal, getopt, socket, json, logging
 from datetime import datetime
 from time import sleep
 
@@ -218,10 +218,20 @@ def convertJSONtoGoAccess (JSONdata):
     time = ts[11:19]                                                            #t
     virtualHost = JSONdata['request']['host']                                   #v
 
-    host = (JSONdata['request']['remote_addr'])                                 #h
-    host = host[0:host.rindex(':')]
-    if (host[0] == '['):
-        host = host[1:host.rindex(']')]
+    # Caddy >= 2.5.0
+    # "remote_ip": "127.0.0.1", "remote_port": "32984"
+    # "remote_ip": "::1", "remote_port": "41272"
+    if JSONdata['request'].get('remote_ip'):
+        host = JSONdata['request']['remote_ip']
+    # Caddy < 2.5.0
+    # "remote_addr": "127.0.0.1:35332"
+    # "remote_addr": "[::1]:48950"
+    elif JSONdata['request'].get('remote_addr'):
+        remote_addr = JSONdata['request']['remote_addr']
+        host = remote_addr[0:remote_addr.rindex(':')].lstrip("[").rstrip("]")
+    else:
+        logging.warning(f"Skipping invalid record: {JSONdata}")
+        return ""
 
     method = JSONdata['request']['method']                                      #m
     uri = JSONdata['request']['uri']                                            #U
